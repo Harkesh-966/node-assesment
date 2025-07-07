@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3 70%);
+    min-height: 100vh;
+}
+.card {
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+}
+#dynamicDiv .alert {
+    font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+    h2, h3 {
+        font-size: 1.4rem;
+    }
+    .container {
+        padding: 0.5rem !important;
+    }
+}
+.btn:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18) !important;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.weather-card {
+    border-radius: 2rem;
+    border: none;
+    background: linear-gradient(120deg, #f8fafc 80%, #e0ecff 100%);
+}
+
+.weather-icon-box {
+    min-width: 130px;
+    max-width: 160px;
+    margin-right: 1.2rem;
+}
+
+.weather-icon {
+    filter: drop-shadow(0 0 10px #b6d0ff88);
+    width: 100%;
+    max-width: 110px;
+}
+
+.list-group-item {
+    border: none !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
