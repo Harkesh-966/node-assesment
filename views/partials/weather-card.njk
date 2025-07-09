@@ -1,0 +1,39 @@
+<div class="card weather-card mt-4 shadow">
+  <div class="card-body d-flex flex-column flex-md-row align-items-center">
+    <div class="weather-icon-box mb-3 mb-md-0 mr-md-4 text-center">
+      <img src="https://openweathermap.org/img/wn/{{ weather.weather[0].icon }}@4x.png"
+           alt="Weather Icon"
+           class="weather-icon img-fluid">
+    </div>
+    <div class="flex-grow-1">
+      <h4 class="card-title mb-1 font-weight-bold">
+        <i class="bi bi-geo-alt-fill text-danger"></i> {{ weather.address | capitalizeFirst }}
+      </h4>
+      <h6 class="text-muted mb-3">
+        <i class="bi bi-calendar2-date"></i> {{ now | formatMoment('DD MMM YYYY, hh:mm A') }}
+      </h6>
+      <ul class="list-group list-group-flush mb-2">
+        <li class="list-group-item bg-transparent">
+          <b><i class="bi bi-thermometer-half text-primary"></i> Temperature:</b>
+          <span class="text-dark font-weight-bold" style="font-size:1.2em">{{ weather.main.temp }} °C</span>
+        </li>
+        <li class="list-group-item bg-transparent">
+          <b><i class="bi bi-cloud-drizzle text-info"></i> Weather:</b>
+          <span class="text-capitalize">{{ weather.weather[0].description }}</span>
+        </li>
+        <li class="list-group-item bg-transparent">
+          <b><i class="bi bi-droplet-half text-info"></i> Humidity:</b>
+          {{ weather.main.humidity }} %
+        </li>
+        <li class="list-group-item bg-transparent">
+          <b><i class="bi bi-wind text-success"></i> Wind:</b>
+          {{ weather.wind.speed }} m/s
+        </li>
+      </ul>
+      <input type="hidden" id="address" value="{{ weather.address }}">
+      <input type="hidden" id="lat" value="{{ weather.coord.lat }}">
+      <input type="hidden" id="lng" value="{{ weather.coord.lon }}">
+      <input type="hidden" id="weather_json" value='{{ weather | dump | safe }}'>
+    </div>
+  </div>
+</div>

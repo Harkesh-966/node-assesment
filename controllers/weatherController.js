@@ -12,7 +12,6 @@ exports.getWeather = async (req, res) => {
         const weather = await weatherService.fetchWeather(address);
         res.render('index.njk', { weather, error: null, now: new Date() });
 
-
     } catch (err) {
         res.render('index.njk', { weather: null, error: "Error fetching weather!" });
     }

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const weatherRoutes = require('./routes/weatherRoutes');
 const historyRoutes = require('./routes/historyRoutes');
+const moment = require('moment');
 
 const app = express();
 
@@ -19,6 +20,10 @@ const env = nunjucks.configure('views', {
 env.addFilter('capitalizeFirst', str => {
   if (!str || typeof str !== 'string') return str;
   return str.charAt(0).toUpperCase() + str.slice(1);
+});
+
+env.addFilter('formatMoment', (date, format = 'DD MMM YYYY, hh:mm A') => {
+  return moment(date).format(format);
 });
 
 // Routes

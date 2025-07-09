@@ -46,4 +46,29 @@ body {
     padding-right: 0;
 }
 
+/* Weather History Page Styles */
+body.weather-history {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3 70%);
+    min-height: 100vh;
+}
+
+.history-card {
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+.history-card .table thead th {
+    background-color: #343a40;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.history-card .table tbody td {
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+
 
